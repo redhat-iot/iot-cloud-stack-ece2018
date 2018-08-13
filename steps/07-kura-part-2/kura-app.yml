@@ -1,0 +1,48 @@
+---
+kind: "BuildConfig"
+apiVersion: "v1"
+metadata:
+  name: kura-app-generator-1
+spec:
+  strategy:
+    type: JenkinsPipeline
+    jenkinsPipelineStrategy:
+      jenkinsfile: |-
+          def groupId = "de.dentrassi.kura.examples"
+          def artifactId = "generator-1"
+          def version = "0.0.1-SNAPSHOT"
+          def basedir = "generator"
+          try {
+             timeout(time: 20, unit: 'MINUTES') {
+                node("maven") {
+                  stage("Checkout") {
+                    git url: "https://github.com/<you>/kura-examples", branch: "tutorial-ece2018"
+                  }
+                  stage("Build") {
+                    sh "mvn clean package -B -pl ${groupId}:${artifactId} --also-make"
+                    dir("${basedir}/${artifactId}/target") {
+                      stash name:"bundle", includes:"${artifactId}-${version}.jar"
+                    }
+                  }
+                }
+                node {
+                  stage("Deploy") {
+                    unstash name:"bundle"
+                    openshift.withCluster() {
+                      openshift.withProject() {
+
+                        def data = sh(returnStdout: true, script: "base64 -w0 ${artifactId}-${version}.jar")
+                        sh("oc patch cm kura-instance-load-config -p '{\"binaryData\":{\"${artifactId}.jar\":\"${data}\"}}'")
+
+                      }
+                    }
+                  }
+                }
+             }
+          } catch (err) {
+             echo "in catch block"
+             echo "Caught: ${err}"
+             currentBuild.result = 'FAILURE'
+             throw err
+          }
+

@@ -1,0 +1,11 @@
+[submodule "hcloud-okd-setup"]
+	path = okd-setup
+	url = https://github.com/ctron/hcloud-okd-setup.git
+[submodule "strimzi"]
+	path = steps/04-strimzi/strimzi
+	url = https://github.com/strimzi/strimzi
+	branch = release-0.6.x
+[submodule "che"]
+	path = steps/08-che-part-1/che
+	url = https://github.com/eclipse/che.git
+	branch = 6.10.x

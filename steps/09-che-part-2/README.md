@@ -38,8 +38,8 @@
 
 Create new workspaces by opening the following links:
 
-  * https://che-che.cluster00.amazing.iot-playground.org/f?url=https://github.com/ctron/hono-example-bridge/tree/tutorial-ece2018
-  * https://che-che.cluster00.amazing.iot-playground.org/f?url=https://github.com/ctron/hono-example-demo-gauge/tree/tutorial-ece2018
+  * https://che-che.[[cluster00]].amazing.iot-playground.org/f?url=https://github.com/ctron/hono-example-bridge/tree/tutorial-ece2018
+  * https://che-che.[[cluster00]].amazing.iot-playground.org/f?url=https://github.com/ctron/hono-example-demo-gauge/tree/tutorial-ece2018
 
 After the import completed, you need to reset the "Git remote" to your forked location, using SSH instead of HTTPS and also switch to the branch `tutorial-ece2018`:
 
@@ -80,7 +80,7 @@ Look for the section "Webhook GitHub":
 
     …
     Webhook GitHub:
-    	URL:	https://cluster00.amazing.iot-playground.org:8443/apis/build.openshift.io/v1/namespaces/demo-gauge/buildconfigs/hono-example-demo-gauge/webhooks/<secret>/github
+    	URL:	https://[[cluster00]].amazing.iot-playground.org:8443/apis/build.openshift.io/v1/namespaces/demo-gauge/buildconfigs/hono-example-demo-gauge/webhooks/<secret>/github
     …
 
 And extract the GitHub webhook secret, use the output of this command to replace the `<secret>` placeholder above:

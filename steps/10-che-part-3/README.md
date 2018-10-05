@@ -26,7 +26,11 @@ the preview browser tab will immediately show the result.
 
 ## Commit and push
 
-  * Commit and push the changes
+  * Commit and push the changes to the `tutorial-ece2018` branch
   * Switch to the "Demo Gauge" project in OKD
   * The build for application "hono-example-demo-gauge" should be running again
   * After the build is finished, check that the change are visible
+
+## Troubleshooting
+
+  * If gauge don't show any data, try restarting pod in Kura application

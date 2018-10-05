@@ -4,6 +4,7 @@
 
   * Create a new workspace
     * Select the "Java CentOS" image, search in "Single Machine" category
+    * Enter "kura-example" as a "Name" of the workspace
     * Do not add any projects!
     * Press "Create"
     * Press "Edit"
@@ -37,8 +38,8 @@
 
 Create new workspaces by opening the following links:
 
-  * https://che-che.cluster00.amazing.iot-playground.org/f?url=https://github.com/ctron/hono-example-bridge/tree/tutorial-ece2018
-  * https://che-che.cluster00.amazing.iot-playground.org/f?url=https://github.com/ctron/hono-example-demo-gauge/tree/tutorial-ece2018
+  * https://che-che.<clusterXX>.amazing.iot-playground.org/f?url=https://github.com/ctron/hono-example-bridge/tree/tutorial-ece2018
+  * https://che-che.<clusterXX>.amazing.iot-playground.org/f?url=https://github.com/ctron/hono-example-demo-gauge/tree/tutorial-ece2018
 
 After the import completed, you need to reset the "Git remote" to your forked location, using SSH instead of HTTPS and also switch to the branch `tutorial-ece2018`:
 
@@ -79,7 +80,7 @@ Look for the section "Webhook GitHub":
 
     …
     Webhook GitHub:
-    	URL:	https://cluster00.amazing.iot-playground.org:8443/apis/build.openshift.io/v1/namespaces/demo-gauge/buildconfigs/hono-example-demo-gauge/webhooks/<secret>/github
+      URL:	https://<clusterXX>.amazing.iot-playground.org:8443/apis/build.openshift.io/v1/namespaces/demo-gauge/buildconfigs/hono-example-demo-gauge/webhooks/<secret>/github
     …
 
 And extract the GitHub webhook secret, use the output of this command to replace the `<secret>` placeholder above:
@@ -87,6 +88,8 @@ And extract the GitHub webhook secret, use the output of this command to replace
     oc get bc hono-example-demo-gauge -o jsonpath --template '{..github.secret}'
 
 ### Setting a build trigger
+
+** This step is optional! Don't do it if the trigger exists **
 
 If a build configuration is missing a build trigger, a new one can be added with the following command:
 

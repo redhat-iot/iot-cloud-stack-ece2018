@@ -17,8 +17,8 @@ Move on to: [steps](steps)
 
 ## Be prepared
 
-Before you come to Ludwigsburg, you should prepare yourself. The following sub-sections help you what you will
-need for this tutorial.
+Before you come to Ludwigsburg, you should prepare yourself. The following sub-sections help you
+bring what you will need for this tutorial.
 
 ### GitHub Account
 
@@ -27,7 +27,7 @@ set webhooks to those forks. You can, of course, create a new GitHub account.
 
 ### A Linux machine
 
-Yes, Linux is awesome. Bring your Linux notebook with:
+Yes, Linux is awesome. Bring your Linux notebook including:
 
   * A web browser
   * Either

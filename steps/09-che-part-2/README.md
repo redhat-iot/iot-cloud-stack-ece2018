@@ -4,6 +4,7 @@
 
   * Create a new workspace
     * Select the "Java CentOS" image, search in "Single Machine" category
+    * Enter "kura-example" as a "Name" of the workspace
     * Do not add any projects!
     * Press "Create"
     * Press "Edit"
@@ -87,6 +88,8 @@ And extract the GitHub webhook secret, use the output of this command to replace
     oc get bc hono-example-demo-gauge -o jsonpath --template '{..github.secret}'
 
 ### Setting a build trigger
+
+** This step is optional! Don't do it if the trigger already exists **
 
 If a build configuration is missing a build trigger, a new one can be added with the following command:
 

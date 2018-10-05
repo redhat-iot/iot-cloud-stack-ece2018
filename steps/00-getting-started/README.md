@@ -4,8 +4,7 @@
 
 Install the `oc` client locally:
 
-  * Download from: https://github.com/openshift/origin/releases
-  * Extract, and put it into your "path"
+  * Follow instructions from https://docs.okd.io/latest/cli_reference/get_started_cli.html#installing-the-cli
   * Give it a try:
     
         oc login --username=developer --password=developer https://cluster00.amazing.iot-playground.org:8443

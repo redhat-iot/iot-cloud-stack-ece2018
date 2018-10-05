@@ -4,6 +4,18 @@ Also see:
 
   * http://strimzi.io/
 
+---
+
+**Sed for OSX**
+
+`sed` for OSX works differently than on Linux, the easiest way around it to use gnu-sed tool:
+
+    brew install gnu-sed
+
+You then need to replace `sed` later on with `gsed`.
+
+---
+
 ## Deploy Strimzi
 
     sed -i 's/namespace: .*/namespace: strimzi/' strimzi/examples/install/cluster-operator/*ClusterRoleBinding*.yaml

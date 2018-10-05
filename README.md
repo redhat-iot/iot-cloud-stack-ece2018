@@ -41,6 +41,7 @@ Yes, Linux is awesome. Bring your Linux notebook including:
 It's actually less about the kernel, more about the command line tools. *sigh* ...
 
 GNU/Mac OS X will work as well, as long as you still bring the tools mentioned above.
+It might be helpful to install GNU Sed using `brew install gnu-sed`.
 
 ### And what about Windows?
 

@@ -21,7 +21,7 @@ Also see:
 
 Using the Web UI:
 
-  * https://<clusterXX>.amazing.iot-playground.org:8443
+  * https://cluster00.amazing.iot-playground.org:8443
   * Navigate to the project "EnMasse Instance"
   * Check if the deployment `api-server` is ready
 
@@ -46,4 +46,4 @@ Using the command line:
 
 ## Check resources
 
-  * https://console-enmasse.<clusterXX>.amazing.iot-playground.org
+  * https://console-enmasse.cluster00.amazing.iot-playground.org

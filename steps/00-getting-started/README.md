@@ -4,14 +4,15 @@
 
 Install the `oc` client locally:
 
-  * Follow instructions from https://docs.okd.io/latest/cli_reference/get_started_cli.html#installing-the-cli
+  * Download from: https://github.com/openshift/origin/releases
+  * Extract, and put it into your "path"
   * Give it a try:
     
-        oc login --username=developer --password=developer https://<clusterXX>.amazing.iot-playground.org:8443
+        oc login --username=developer --password=developer https://cluster00.amazing.iot-playground.org:8443
 
 It is also possible to use the Web UI:
 
-  * https://<clusterXX>.amazing.iot-playground.org:8443
+  * https://cluster00.amazing.iot-playground.org:8443
 
 ## Fork projects
 

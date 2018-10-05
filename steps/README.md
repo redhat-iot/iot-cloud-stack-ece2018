@@ -15,9 +15,8 @@ These are the steps of the tutorial:
 * [Step 10 – Making changes](10-che-part-3)
 
 The following steps assume, that the DNS name of your OKD cluster
-is `<<clusterXX>>.amazing.iot-playground.org`, if your DNS name is different
+is `cluster00.amazing.iot-playground.org`, if your DNS name is different
 (which should be the case) then you need to replace this in all commands and links.
-You'll probably just change `<clusterXX>` with your exact cluster, like `<clusterXX>` for example.
 
 The same is true for some (not all) Git URLs. Some URL are in the form `git@github.com:<you>/foo-bar.git`.
 In this case you need to have a clone of that repository and replace `<you>` with

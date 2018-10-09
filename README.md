@@ -6,7 +6,7 @@
 
 Clone this repository:
 
-    git clone https://github.com/ctron/iot-cloud-stack-ece2018 --recursive
+    git clone https://github.com/redhat-iot/iot-cloud-stack-ece2018 --recursive
 
 **Git for Windows:** If you are using Git for Windows, then you need to execute the following
                      command __before__ cloning the Git repository.

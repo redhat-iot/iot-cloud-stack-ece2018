@@ -1,6 +1,6 @@
 # IoT Cloud Stack Tutorial – EclipseCon Europe 2018
 
-**Note:** This module uses Git submodules. Either clone with `--recursive` or run `git submodule update --init --recursive` after cloning.
+**Note:** This repository uses Git submodules. Either clone with `--recursive` or run `git submodule update --init --recursive` after cloning.
 
 ## Getting started
 

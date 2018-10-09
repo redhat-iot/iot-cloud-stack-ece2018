@@ -57,8 +57,8 @@ There are a few choices you have:
 
   * Run Linux virtual machine – That brings you back to [A Linux machine](#a-linux-machine), but you finally
     got a nice little Linux box on your machine.
-  * Run a docker container – `docker run -ti centos:7` and installing a few extras should work as well. But
-    from what I know, this boils down to running Docker with a virtual machine again.
   * Install [Git for Windows](https://git-scm.com/download/win) – Git for Windows allows you to install a "Git Bash", which
     has everything this tutorial needs. Might be a good alternative over a full blown virtual machine.
-  * Go for the Windows 10 Linux subsystem – Yes, hell froze over once again. And now Windows acts like Linux kernel.
+  * Run a docker container – `docker run -ti centos:7` and installing a few extras should work as well. But
+    from what I know, this boils down to running Docker with a virtual machine again.
+  * Go for the Windows 10 Linux subsystem – Yes, hell froze over once again. And now Windows acts like the Linux kernel.

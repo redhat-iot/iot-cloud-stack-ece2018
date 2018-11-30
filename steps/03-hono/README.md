@@ -11,7 +11,10 @@ Also see:
     oc create configmap influxdb-config --from-file=influxdb.conf
     oc label configmap/influxdb-config app=hono-metrics
     
-    oc process -f https://raw.githubusercontent.com/eclipse/hono/0.7.x/deploy/src/main/deploy/openshift_s2i/hono-template.yml -p ENMASSE_NAMESPACE=enmasse -p GIT_BRANCH=0.7.x | oc create -f -
+    oc create -f https://raw.githubusercontent.com/eclipse/hono/0.8.x/deploy/src/main/deploy/openshift_s2i/hono-address-space.yml
+    oc process -f https://raw.githubusercontent.com/eclipse/hono/0.8.x/deploy/src/main/deploy/openshift_s2i/hono-template.yml -p GIT_BRANCH=0.8.x | oc create -f -
+    oc create -f https://raw.githubusercontent.com/eclipse/hono/0.8.x/deploy/src/main/deploy/openshift_s2i/hono-tenant-template.yml
+    oc process hono-tenant HONO_TENANT_NAME=DEFAULT_TENANT RESOURCE_NAME=defaulttenant CONSUMER_USER_NAME=consumer CONSUMER_USER_PASSWORD="$(echo -n verysecret | base64)"| oc create -f -
 
 ## Deploy metrics dashboard
 
@@ -22,9 +25,8 @@ Also see:
     oc label configmap grafana-provisioning-dashboards app=hono-metrics
     oc label configmap grafana-dashboard-defs app=hono-metrics
     
-    oc process -f https://raw.githubusercontent.com/eclipse/hono/0.7.x/deploy/src/main/deploy/openshift_s2i/grafana-template.yml -p ADMIN_PASSWORD=admin -p GIT_BRANCH=0.7.x | oc create -f -
+    oc process -f https://raw.githubusercontent.com/eclipse/hono/0.8.x/deploy/src/main/deploy/openshift_s2i/grafana-template.yml -p ADMIN_PASSWORD=admin -p GIT_BRANCH=0.8.x | oc create -f -
 
 ## Enable TLS
 
     oc -n grafana patch route/grafana -p '{"spec":{"tls":{"termination":"edge"}}}'
-    oc -n hono patch route/hono-service-device-registry-http -p '{"spec":{"tls":{"termination":"edge"}}}'

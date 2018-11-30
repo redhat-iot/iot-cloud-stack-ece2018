@@ -12,7 +12,7 @@ Also see:
 ## Deploy Bridge
 
     oc new-project hono-consumer --display-name 'Hono Consumer'
-    oc new-app fabric8/s2i-java~https://github.com/<you>/hono-example-bridge#tutorial-ece2018 -e KAFKA_CLUSTER_NAME=hono-kafka-cluster -e KAFKA_PROJECT=kafka
+    oc new-app fabric8/s2i-java~https://github.com/<you>/hono-example-bridge#tutorial-ece2018 -e KAFKA_CLUSTER_NAME=hono-kafka-cluster -e KAFKA_PROJECT=kafka -e AMQP_HOST=messaging-hono-default.enmasse-infra.svc AMQP_USERNAME=consumer AMQP_PASSWORD=verysecret
 
 ## Fixing it up
 

@@ -6,7 +6,7 @@ This step will setup up a build for Kura application, and deploy it to the runni
 
 First of all the Kura instance needs to be registered with Eclipse Hono:
 
-    curl -X POST -H 'Content-Type: application/json' -d '{"device-id": "4711"}' https://hono-service-device-registry-http-hono.[[cluster00]].amazing.iot-playground.org/registration/DEFAULT_TENANT
+    curl -X POST -H 'Content-Type: application/json' -d '{"device-id": "4711"}' https://hono-service-device-registry-https-hono.[[cluster00]].amazing.iot-playground.org/registration/DEFAULT_TENANT
 
 ## Connect to Kura
 

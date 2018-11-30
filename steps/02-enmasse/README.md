@@ -6,16 +6,14 @@ Also see:
 
 ## Download
 
-    curl -sL https://github.com/EnMasseProject/enmasse/releases/download/0.21.2/enmasse-0.21.2.tgz -o enmasse-0.21.2.tgz
-    tar xzf enmasse-0.21.2.tgz
+    curl -LO https://github.com/EnMasseProject/enmasse/releases/download/0.24.0/enmasse-0.24.0.tgz
+    tar xzf enmasse-0.24.0.tgz
 
 ## Deploy
 
-    oc new-project enmasse --display-name='EnMasse Instance'
-    ./enmasse-0.21.2/deploy.sh -n enmasse
-
-**Git for Windows:** You need to edit the `common.sh` file, locate the lines containing `\"/O=io.enmasse/CN=${CN}\"`
-                     and replace them with `\"//O=io.enmasse\CN=${CN}\"`.
+    oc login -u admin
+    oc new-project enmasse-infra --display-name='EnMasse'
+    oc apply -f enmasse-0.24.0/install/bundles/enmasse-with-standard-authservice
 
 ## Check readiness
 
@@ -27,23 +25,14 @@ Using the Web UI:
 
 Using the command line:
 
-    oc get deploy/api-server
+    oc get deploy/api-server deploy/keycloak
 
-## Fix endpoint certificates
+Verify that the "AVAILABLE" column shows "1":
 
-    mkdir -p certs/{console,messaging,api-server}
-    oc extract secret/external-certs-console --to=certs/console --confirm
-    oc extract secret/external-certs-messaging --to=certs/messaging --confirm
-    oc extract secret/api-server-cert --to=certs/api-server --confirm
+    NAME         DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+    api-server   1         1         1            1           1m
+    keycloak     1         1         1            1           1m
 
-    oc delete route/restapi route/console
-    oc create route reencrypt console --service=console --dest-ca-cert=certs/console/ca.crt
-    oc create route reencrypt restapi --service=api-server --dest-ca-cert=certs/api-server/tls.crt
+## Switch back to normal user
 
-## Deploy address resources
-
-    curl -X POST -T addresses.json -H "content-type: application/json" https://$(oc -n enmasse get route restapi -o jsonpath='{.spec.host}')/apis/enmasse.io/v1alpha1/namespaces/enmasse/addressspaces/default/addresses
-
-## Check resources
-
-  * https://console-enmasse.[[cluster00]].amazing.iot-playground.org
+    oc login -u developer

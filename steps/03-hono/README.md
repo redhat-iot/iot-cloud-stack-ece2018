@@ -26,7 +26,3 @@ Also see:
     oc label configmap grafana-dashboard-defs app=hono-metrics
     
     oc process -f https://raw.githubusercontent.com/eclipse/hono/0.8.x/deploy/src/main/deploy/openshift_s2i/grafana-template.yml -p ADMIN_PASSWORD=admin -p GIT_BRANCH=0.8.x | oc create -f -
-
-## Enable TLS
-
-    oc -n grafana patch route/grafana -p '{"spec":{"tls":{"termination":"edge"}}}'

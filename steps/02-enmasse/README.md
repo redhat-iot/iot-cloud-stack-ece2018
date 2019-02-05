@@ -6,14 +6,14 @@ Also see:
 
 ## Download
 
-    curl -LO https://github.com/EnMasseProject/enmasse/releases/download/0.24.0/enmasse-0.24.0.tgz
-    tar xzf enmasse-0.24.0.tgz
+    curl -LO https://github.com/EnMasseProject/enmasse/releases/download/0.26.2/enmasse-0.26.2.tgz
+    tar xzf enmasse-0.26.2.tgz
 
 ## Deploy
 
     oc login -u admin
     oc new-project enmasse-infra --display-name='EnMasse'
-    oc apply -f enmasse-0.24.0/install/bundles/enmasse-with-standard-authservice
+    oc apply -f enmasse-0.26.2/install/bundles/enmasse-with-standard-authservice
 
 ## Check readiness
 

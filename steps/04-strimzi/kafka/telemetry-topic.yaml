@@ -3,7 +3,7 @@ kind: KafkaTopic
 metadata:
   name: telemetry
   labels:
-    strimzi.io/cluster: my-cluster
+    strimzi.io/cluster: hono-kafka-cluster
 spec:
   partitions: 1
   replicas: 1

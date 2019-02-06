@@ -6,7 +6,7 @@
     * Select the "Java CentOS" image, search in "Single Machine" category
     * Enter "kura-example" as a "Name" of the workspace
     * Do not add any projects!
-    * Press "Create"
+    * Press "Create & Proceed editing" (in the dropdown list)
     * Press "Edit"
     * Switch to "Installers"
     * Enable "Git credentials"
